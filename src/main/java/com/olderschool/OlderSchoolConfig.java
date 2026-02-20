@@ -3,6 +3,7 @@ package com.olderschool;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
+import net.runelite.client.config.ConfigSection;
 
 @ConfigGroup("example")
 public interface OlderSchoolConfig extends Config
@@ -66,6 +67,7 @@ public interface OlderSchoolConfig extends Config
 	{
 		return true;
 	}
+
 	@ConfigItem(
 			keyName = "legacyRedDragon",
 			name = "Legacy Red Dragon",
@@ -75,6 +77,7 @@ public interface OlderSchoolConfig extends Config
 	{
 		return true;
 	}
+
 	@ConfigItem(
 			keyName = "legacyBlackDragon",
 			name = "Legacy Black Dragon",
@@ -101,6 +104,59 @@ public interface OlderSchoolConfig extends Config
 			description = "Replaces baby blue dragons with the legacy model and animations"
 	)
 	default boolean legacyBabyBlueDragon()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+			keyName = "legacyScorpion",
+			name = "Legacy Scorpion",
+			description = "Replaces scorpions with the legacy model and animations"
+	)
+	default boolean legacyScorpion()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+			keyName = "legacyCaveBug",
+			name = "Legacy Cave Bug",
+			description = "Replaces cave bugs with the legacy model and animations"
+	)
+	default boolean legacyCaveBug()
+	{
+		return true;
+	}
+
+	// -------------------------------------------------------------------------
+	// EXPERIMENTAL
+	// -------------------------------------------------------------------------
+
+	@ConfigSection(
+			name = "Experimental",
+			description = "Experimental features - may not work as expected",
+			position = 99,
+			closedByDefault = false
+	)
+	String experimentalSection = "experimental";
+
+	@ConfigItem(
+			keyName = "legacyGreenDragon",
+			name = "Legacy Green Dragon",
+			description = "Replaces green dragons with a legacy green dragon model and animations. Experimental.",
+			section = experimentalSection
+	)
+	default boolean legacyGreenDragon()
+	{
+		return false;
+	}
+	@ConfigItem(
+			keyName = "legacyKingBlackDragon",
+			name = "Legacy King Black Dragon",
+			description = "Replaces the King Black Dragon with the legacy King Black Dragon model and animations. Experimental.",
+			section = experimentalSection
+	)
+	default boolean legacyKingBlackDragon()
 	{
 		return true;
 	}
