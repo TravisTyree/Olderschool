@@ -1,4 +1,4 @@
-package com.example;
+package com.olderschool;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -19,14 +19,14 @@ import java.util.Map;
 import java.util.Set;
 
 @Slf4j
-@PluginDescriptor(name = "Example")
-public class ExamplePlugin extends Plugin {
+@PluginDescriptor(name = "OlderSchool")
+public class OlderSchoolPlugin extends Plugin {
 
 	@Inject
 	private Client client;
 
 	@Inject
-	private ExampleConfig config;
+	private OlderSchoolConfig config;
 
 	// Goblin
 	private static final Set<Integer> GOBLIN_SOURCE_IDS = Set.of(3029, 3030, 3031, 3032, 3033, 3034, 3035, 3036);
@@ -65,7 +65,7 @@ public class ExamplePlugin extends Plugin {
 	private static final Set<Integer> BLACK_DEMON_SRC_DEATH  = Set.of(67);
 
 	// Lesser Demon
-	private static final Set<Integer> LESSER_DEMON_SOURCE_IDS = Set.of(7247, 7248);
+	private static final Set<Integer> LESSER_DEMON_SOURCE_IDS = Set.of(2005, 2006, 2007, 2008, 2018, 3982, 7247, 7248, 7656, 7657, 7664, 7865, 7866,7867);
 	private static final int LESSER_DEMON_TARGET_ID = 15606;
 	private static final int LESSER_DEMON_ANIM_IDLE   = 13743;
 	private static final int LESSER_DEMON_ANIM_WALK   = 13744;
@@ -499,7 +499,7 @@ public class ExamplePlugin extends Plugin {
 	}
 
 	@Provides
-	ExampleConfig provideConfig(ConfigManager configManager) {
-		return configManager.getConfig(ExampleConfig.class);
+	OlderSchoolConfig provideConfig(ConfigManager configManager) {
+		return configManager.getConfig(OlderSchoolConfig.class);
 	}
 }
